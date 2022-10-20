@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', serif;
+}
+
+nav {
+  height: 10vh;
+  background: #333;
+  color: white;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul a:hover {
+  color: #fcfc;
+}
+
+.about,
+.home {
+  font-size: 35px;
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.posts {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.cta {
+  display: flex;
+  gap: 2rem;
+}
+
+.createPost {
+  color: blue !important;
+}
+
+.createPost,
+.deletePost {
+  margin-top: 3rem;
+  color: red;
+  text-align: center;
+  font-style: italic;
+  font-size: 23px;
+}
+
+.user-container {
+  width: 100%;
+  padding: 0 22px;
+}
+
+.user-container h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  place-items: center;
+  margin-bottom: 3rem;
+
+}
+
+.user {
+  width: 320px;
+  height: 220px;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.user img {
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+
+.user .name {
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 19px;
+}
+
+.user .email,
+.user .phone {
+  font-style: italic;
+  font-size: small;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+}
+
+.pagination button {
+  padding: 12px 18px;
+  outline: none;
+  border: 1px solid blue;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 2px;
+
+}
+
+/* Skeleton Loading Styles */
+
+.skeleton {
+  width: 320px;
+  height: 220px;
+  border: 1px solid #d3d3d3;
+  padding: 12px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.skeleton .img {
+  width: 80px;
+  height: 80px;
+  background: #d3d3d3;
+  border-radius: 50%;
+  margin-bottom: 22px;
+}
+
+.skeleton .name {
+  width: 70%;
+  height: 32px;
+  background: #d3d3d3;
+  margin-bottom: 18px;
+
+}
+
+.skeleton .email {
+  width: 100%;
+  height: 15px;
+  background: #d3d3d3;
+  margin-bottom: 4px;
+}
+
+.skeleton .phone {
+  width: 90%;
+  height: 15px;
+  background: #d3d3d3;
+}
+
+.skeleton::before {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, .25);
+  width: 10%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  top: 1px;
+  left: 1px;
+  transform: skewX(10deg);
+  animation: skeleton .8s linear infinite;
+
+
+
+}
+/* Skeleton Loading Animations */
+@keyframes skeleton {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:578px) {
+  .users {
+    grid-template-columns: 1fr;
+  }
+
+  .user {
+    width: 100%;
+    height: 220px;
+  }
+
+  .skeleton {
+    width: 100%;
+    height: 220px;
+
+  }
+}
