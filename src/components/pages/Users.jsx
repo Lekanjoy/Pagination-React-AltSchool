@@ -26,7 +26,11 @@ const Users = () => {
   const indexOfFirstUser = indexOfLastUser - userPerPage;
   const currentUser = users.slice(indexOfFirstUser, indexOfLastUser);
 
-  const paginate = () => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    console.log('paginate');
+  };
+
 
   return (
     <section className="user-container">
@@ -39,10 +43,15 @@ const Users = () => {
           <User users={currentUser} loading={loading} />
         )}
       </div>
+      <p>
+        Page {currentPage} of {userPerPage}
+      </p>
       <Pagination
         userPerPage={userPerPage}
         totalUsers={users.length}
         paginate={paginate}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
     </section>
   );

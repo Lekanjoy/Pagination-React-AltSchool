@@ -110,19 +110,26 @@ nav ul a:hover {
 }
 
 .pagination {
-  display: flex;
-  gap: 12px;
+  margin: 1rem 0;
 }
 
 .pagination button {
-  padding: 12px 18px;
+  padding: 4px 16px;
   outline: none;
-  border: 1px solid blue;
-  background-color: white;
+  border: none;
+  background-color: rgb(104, 104, 200);
+  color: white;
   font-size: 20px;
   border-radius: 2px;
+  margin: 6px;
+  cursor: pointer;
 
 }
+button:disabled{
+  background: rgb(180, 178, 178);
+  cursor: not-allowed;
+}
+
 
 /* Skeleton Loading Styles */
 
