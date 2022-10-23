@@ -8,7 +8,7 @@ const Users = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage] = useState(12);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+
 
   useEffect(() => {
     setLoading(true);
@@ -19,8 +19,6 @@ const Users = () => {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-    setLoading(false);
-    setError(true);
   }, []);
 
   // Get current userPage
@@ -37,7 +35,7 @@ const Users = () => {
     <section className="user-container">
       <h1>Users</h1>
       <div className="users">
-        {loading === true && error === false ? (
+        {loading === true ? (
           <SkeletonLoading />
         ) : (
           <User users={currentUser} loading={loading} />
