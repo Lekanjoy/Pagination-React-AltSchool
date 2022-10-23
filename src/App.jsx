@@ -8,6 +8,7 @@ import CreatePost from './components/pages/CreatePost'
 import DeletePost from './components/pages/DeletePost'
 import Layout from './components/pages/Layout'
 import Error404 from './components/pages/Error404'
+import ErrorBoundary from './components/ErrorBoundary'
 
 
 
@@ -15,7 +16,7 @@ function App() {
 
 
   return (
-    <>
+    <ErrorBoundary>
       <Routes>
         <Route path="/">
           <Route element={<Layout />}>
@@ -30,7 +31,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
-    </>
+    </ErrorBoundary>
   );
 }
 

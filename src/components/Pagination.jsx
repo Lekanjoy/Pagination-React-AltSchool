@@ -14,6 +14,7 @@ const Pagination = ({
   for (let i = 1; i <= Math.ceil(totalUsers / userPerPage); i++) {
     pageNumber.push(i);
   };
+  
   // Next Page
   function nextPage() {
     setCurrentPage(currentPage + 1);
@@ -26,7 +27,7 @@ const Pagination = ({
 
   return (
     <div className="pagination">
-      <button disabled={currentPage <= 1} onClick={prevPage}>
+      <button disabled={currentPage === 1} onClick={prevPage}>
         Prev
       </button>
 

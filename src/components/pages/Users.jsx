@@ -8,6 +8,7 @@ const Users = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage] = useState(12);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -18,26 +19,25 @@ const Users = () => {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-    // setLoading(false);
+    setLoading(false);
+    setError(true);
   }, []);
 
-  // Get current user
+  // Get current userPage
   const indexOfLastUser = currentPage * userPerPage;
   const indexOfFirstUser = indexOfLastUser - userPerPage;
   const currentUser = users.slice(indexOfFirstUser, indexOfLastUser);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    console.log('paginate');
+    console.log("paginate");
   };
-
 
   return (
     <section className="user-container">
       <h1>Users</h1>
-
       <div className="users">
-        {loading === true ? (
+        {loading === true && error === false ? (
           <SkeletonLoading />
         ) : (
           <User users={currentUser} loading={loading} />

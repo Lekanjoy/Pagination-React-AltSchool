@@ -6,7 +6,7 @@ const User = ({ users}) => {
     <>
       {users.map((user) => {
         return (
-          <div className="user">
+          <div key={user.phone} className="user">
             <img src={user.picture.medium} alt="user photo" />
             <p className="name">{`${user.name.title} ${user.name.first} ${user.name.last}`}</p>
             <p className="email">
