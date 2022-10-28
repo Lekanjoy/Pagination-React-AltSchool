@@ -28,7 +28,6 @@ const Users = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    console.log("paginate");
   };
 
   return (
